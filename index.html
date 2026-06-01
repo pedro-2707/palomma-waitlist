@@ -669,11 +669,9 @@
        JAVASCRIPT
   ═══════════════════════════════════════════ -->
   <script>
-    // ┌─────────────────────────────────────────────────┐
-    // │  CONFIGURACIÓN — edita solo esta variable        │
-    // │  Pega aquí la URL del webhook de Make/Zapier     │
-    // └─────────────────────────────────────────────────┘
-    const WEBHOOK_URL = 'PEGA_TU_URL_DE_MAKE_AQUI';
+    // Las integraciones (Google Sheets, Make, Slack) se configuran
+    // en Vercel → Settings → Environment Variables. No hay nada que
+    // cambiar aquí en el frontend.
 
     // ── Estado global ──
     let tipoPersona = null; // 'juridica' | 'natural'
@@ -874,34 +872,24 @@
       }
 
       try {
-        if (!WEBHOOK_URL || WEBHOOK_URL === 'PEGA_TU_URL_DE_MAKE_AQUI') {
-          console.log('📦 Datos del formulario (modo demo):', payload);
-          showSuccess();
-          return;
-        }
-
-        const response = await fetch(WEBHOOK_URL, {
+        const response = await fetch('/api/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
         });
 
-        if (response.ok || response.status === 200 || response.status === 204) {
+        if (response.ok) {
           showSuccess();
         } else {
           throw new Error('Status: ' + response.status);
         }
       } catch (err) {
         console.error('Error enviando formulario:', err);
-        if (err.name === 'TypeError' && err.message.includes('fetch')) {
-          showSuccess();
-        } else {
-          document.getElementById('global-error').classList.remove('hidden');
-          btn.disabled = false;
-          btnText.textContent = 'Solicitar acceso a Palomma Pay';
-          btnIcon.classList.remove('hidden');
-          btnSpinner.classList.add('hidden');
-        }
+        document.getElementById('global-error').classList.remove('hidden');
+        btn.disabled = false;
+        btnText.textContent = 'Solicitar acceso a Palomma Pay';
+        btnIcon.classList.remove('hidden');
+        btnSpinner.classList.add('hidden');
       }
     });
 
