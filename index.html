@@ -543,8 +543,20 @@
             <option value="21-50">21 – 50 contratos</option>
             <option value="51-100">51 – 100 contratos</option>
             <option value="101-200">101 – 200 contratos</option>
-            <option value="+200">Más de 200 contratos</option>
+            <option value="201-300">201 – 300 contratos</option>
+            <option value="301-400">301 – 400 contratos</option>
+            <option value="401-500">401 – 500 contratos</option>
+            <option value="501-600">501 – 600 contratos</option>
+            <option value="601-700">601 – 700 contratos</option>
+            <option value="701-800">701 – 800 contratos</option>
+            <option value="801-900">801 – 900 contratos</option>
+            <option value="901-1000">901 – 1.000 contratos</option>
+            <option value="+1000">Más de 1.000 contratos</option>
           </select>
+          <!-- Campo abierto si eligen +1000 -->
+          <div id="contratos-exactos-container" class="mt-2 hidden">
+            <input class="field-input" type="number" id="contratos_exactos" name="contratos_exactos" placeholder="¿Cuántos contratos exactamente?" min="1001">
+          </div>
           <p class="field-error" id="err-num_contratos">Selecciona una opción.</p>
           <p class="text-xs text-on-surface-variant mt-2">Esto nos ayuda a asignarte la capacidad correcta desde el inicio.</p>
         </div>
@@ -590,32 +602,33 @@
       <div class="animate-fade-up">
         <p class="text-xs font-medium uppercase tracking-widest mb-2" style="font-family:'IBM Plex Mono',monospace; color:#630ed4;">¡Solicitud recibida!</p>
         <h2 class="text-2xl md:text-3xl font-bold text-ink-foreground mb-3" style="font-family:'Rethink Sans',sans-serif;">
-          Estás en la lista.
+          Ya haces parte de la waitlist.
         </h2>
         <p class="text-on-surface-variant text-base mb-6">
-          Revisaremos tu solicitud y te contactaremos cuando tengamos disponibilidad. Estamos siendo cuidadosos con cada inmobiliaria que incorporamos para garantizar la calidad del servicio.
+          Bienvenido al primer paso para hacer más eficiente tu recaudo. En cuanto tengamos disponibilidad te contactamos para activar tu cuenta.
         </p>
       </div>
 
       <div class="animate-fade-up-delay space-y-3 mb-8">
         <div class="flex items-start gap-3 text-left p-3 rounded-xl bg-surface-container-low border border-border-subtle">
-          <span class="material-symbols-outlined text-secondary flex-shrink-0 mt-0.5" style="font-size:20px; font-variation-settings:'FILL' 1;">mark_email_read</span>
-          <div>
-            <p class="text-sm font-semibold text-ink-foreground">Revisa tu correo</p>
-            <p class="text-xs text-on-surface-variant">Te enviamos un mensaje de confirmación.</p>
-          </div>
-        </div>
-        <div class="flex items-start gap-3 text-left p-3 rounded-xl bg-surface-container-low border border-border-subtle">
           <span class="material-symbols-outlined text-secondary flex-shrink-0 mt-0.5" style="font-size:20px; font-variation-settings:'FILL' 1;">hourglass_top</span>
           <div>
-            <p class="text-sm font-semibold text-ink-foreground">Tiempo de respuesta</p>
-            <p class="text-xs text-on-surface-variant">Nos comunicamos en un plazo de 2 a 5 días hábiles.</p>
+            <p class="text-sm font-semibold text-ink-foreground">Estamos en contacto</p>
+            <p class="text-xs text-on-surface-variant">Te escribiremos en cuanto tengamos disponibilidad para tu inmobiliaria.</p>
           </div>
         </div>
-      </div>
-
-      <div class="animate-fade-up-delay-2">
-        <p class="text-sm text-on-surface-variant">¿Preguntas? Escríbenos a <a href="mailto:hola@palomma.com" class="text-primary font-semibold hover:underline">hola@palomma.com</a></p>
+        <a href="https://wa.me/573126202787" target="_blank" rel="noopener noreferrer"
+          class="flex items-start gap-3 text-left p-3 rounded-xl border border-border-subtle hover:border-primary/40 transition-colors" style="background: rgba(37,211,102,0.06);">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background:#25D366;">
+            <svg viewBox="0 0 24 24" class="w-4 h-4 fill-white" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-ink-foreground">¿Tienes alguna duda?</p>
+            <p class="text-xs text-on-surface-variant">Escríbele directamente al equipo de Palomma por WhatsApp.</p>
+          </div>
+        </a>
       </div>
 
     </div>
@@ -705,6 +718,12 @@
       document.getElementById(id).addEventListener('input', function (e) {
         e.target.value = e.target.value.replace(/[^0-9]/g, '').slice(0, 10);
       });
+    });
+
+    // ── Contratos +1000 condicional ──
+    document.getElementById('num_contratos').addEventListener('change', function () {
+      document.getElementById('contratos-exactos-container').classList.toggle('hidden', this.value !== '+1000');
+      clearError('num_contratos');
     });
 
     // ── ERP "Otro" condicional ──
@@ -837,8 +856,11 @@
         cual_pasarela: selectedRecaudo.has('Pasarela') ? document.getElementById('cual_pasarela').value.trim() : '',
         cual_otro_recaudo: selectedRecaudo.has('Otro') ? document.getElementById('cual_otro_recaudo').value.trim() : '',
         num_contratos: document.getElementById('num_contratos').value,
+        contratos_exactos: document.getElementById('num_contratos').value === '+1000'
+          ? (document.getElementById('contratos_exactos').value || '')
+          : '',
         fecha_solicitud: new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota' }),
-        prioridad: document.getElementById('num_contratos').value === '+200' ? 'ALTA' : 'WAITLIST'
+        prioridad: ['201-300','301-400','401-500','501-600','601-700','701-800','801-900','901-1000','+1000'].includes(document.getElementById('num_contratos').value) ? 'ALTA' : 'WAITLIST'
       };
 
       if (tipoPersona === 'juridica') {
@@ -908,3 +930,4 @@
   </script>
 </body>
 </html>
+
